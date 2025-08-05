@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <script src="supabase.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Login/Signup Form (shown when user is not logged in) -->
+        <div id="authForm" class="auth-form">
+            <h1>📝 Sticky Notes</h1>
+            
+            <div id="loginForm">
+                <h2>Login</h2>
+                <div class="form-group">
+                    <label for="loginEmail">Email:</label>
+                    <input type="email" id="loginEmail" placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password:</label>
+                    <input type="password" id="loginPassword" placeholder="password">
+                </div>
+                <button id="loginBtn">Login</button>
+                <p><a href="#" id="showSignup">Need an account? Sign up</a></p>
+            </div>
+
+            <div id="signupForm" style="display: none;">
+                <h2>Sign Up</h2>
+                <div class="form-group">
+                    <label for="signupEmail">Email:</label>
+                    <input type="email" id="signupEmail" placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password:</label>
+                    <input type="password" id="signupPassword" placeholder="password">
+                </div>
+                <button id="signupBtn">Sign Up</button>
+                <p><a href="#" id="showLogin">Already have an account? Login</a></p>
+            </div>
+        </div>
+
+        <!-- Main App (shown when user is logged in) -->
+        <div id="mainApp" style="display: none;">
+            <div class="header">
+                <h1>📝 Send a Sticky Note</h1>
+                <button id="logoutBtn" class="logout-btn">Logout</button>
+            </div>
+            
+            <div class="user-info">
+                <span id="userEmail">Loading...</span>
+            </div>
+            
+            <div class="form-group">
+                <label for="noteText">Your Note:</label>
+                <textarea id="noteText" placeholder="Write your note here..."></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="recipient">Send to:</label>
+                <input type="email" id="recipient" placeholder="friend@example.com">
+            </div>
+            
+            <button id="sendNote">Send Note</button>
+            
+            <div id="status"></div>
+        </div>
+    </div>
+    
+    <script src="config.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html>
